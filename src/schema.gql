@@ -1,0 +1,170 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Produto {
+  produtoId: ID!
+  nomeProduto: String!
+  descricaoProduto: String!
+  precoProduto: String!
+  qtdEstoque: Float!
+  dataCadastroProduto: String!
+  imagem: String!
+  categoriaId: Float!
+}
+
+type Categoria {
+  categoriaId: ID!
+  nomeCategoria: String!
+  descricaoCategoria: String!
+}
+
+type Endereco {
+  enderecoId: ID!
+  cep: String!
+  rua: String!
+  bairro: String!
+  cidade: String!
+  numero: String!
+  complemento: String!
+  uf: String!
+}
+
+type Cliente {
+  clienteId: ID!
+  email: String!
+  username: String!
+  senha: String!
+  nome: String!
+  cpf: String!
+  telefone: String!
+  dataNascimento: String!
+  enderecoId: Float!
+}
+
+type Pedido {
+  pedidoId: ID!
+  numeroPedido: Float!
+  valorTotalPedido: String!
+  dataPedido: String!
+  status: Boolean!
+  clienteId: Float!
+}
+
+type Query {
+  categorias: [Categoria!]!
+  categoria(id: String!): Categoria!
+  enderecos: [Endereco!]!
+  endereco(id: String!): Endereco!
+  produtos: [Produto!]!
+  produto(id: String!): Produto!
+  clientes: [Cliente!]!
+  cliente(id: String!): Cliente!
+  pedidos: [Pedido!]!
+  pedido(id: String!): Pedido!
+}
+
+type Mutation {
+  createCategoria(data: CreateCategoriaInput!): Categoria!
+  updateCategoria(data: UpdateCategoriaInput!, id: String!): Categoria!
+  deleteCategoria(id: String!): Boolean!
+  createEndereco(data: CreateEnderecoInput!): Endereco!
+  updateEndereco(data: UpdateEnderecoInput!, id: String!): Endereco!
+  deleteEndereco(id: String!): Boolean!
+  createProduto(data: CreateProdutoInput!): Produto!
+  updateProduto(data: UpdateProdutoInput!, id: String!): Produto!
+  deleteProduto(id: String!): Boolean!
+  createCliente(data: CreateClienteInput!): Cliente!
+  updateCliente(data: UpdateClienteInput!, id: String!): Cliente!
+  deleteCliente(id: String!): Boolean!
+  createPedido(data: CreatePedidoInput!): Pedido!
+  updatePedido(data: UpdatePedidoInput!, id: String!): Pedido!
+  deletePedido(id: String!): Boolean!
+}
+
+input CreateCategoriaInput {
+  nomeCategoria: String!
+  descricaoCategoria: String!
+}
+
+input UpdateCategoriaInput {
+  nomeCategoria: String
+  descricaoCategoria: String
+}
+
+input CreateEnderecoInput {
+  cep: String!
+  rua: String!
+  bairro: String!
+  cidade: String!
+  numero: String!
+  complemento: String!
+  uf: String!
+}
+
+input UpdateEnderecoInput {
+  cep: String
+  rua: String
+  bairro: String
+  cidade: String
+  numero: String
+  complemento: String
+  uf: String
+}
+
+input CreateProdutoInput {
+  nomeProduto: String!
+  descricaoProduto: String!
+  precoProduto: String!
+  qtdEstoque: Float!
+  dataCadastroProduto: String!
+  imagem: String!
+  categoriaId: Float!
+}
+
+input UpdateProdutoInput {
+  nomeProduto: String
+  descricaoProduto: String
+  precoProduto: String
+  qtdEstoque: Float
+  dataCadastroProduto: String
+  imagem: String
+}
+
+input CreateClienteInput {
+  email: String!
+  username: String!
+  senha: String!
+  nome: String!
+  cpf: String!
+  telefone: String!
+  dataNascimento: String!
+  enderecoId: Float!
+}
+
+input UpdateClienteInput {
+  email: String
+  username: String
+  senha: String
+  nome: String
+  cpf: String
+  telefone: String
+  dataNascimento: String
+  enderecoId: Float
+}
+
+input CreatePedidoInput {
+  numeroPedido: Float!
+  valorTotalPedido: String!
+  dataPedido: String!
+  status: Boolean!
+  clienteId: Float!
+}
+
+input UpdatePedidoInput {
+  numeroPedido: Float
+  valorTotalPedido: String
+  dataPedido: String
+  status: Boolean
+  clienteId: Float
+}
